@@ -1,0 +1,267 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#ECE8EF;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:120px;
+    background:linear-gradient(
+        180deg,
+        #2E004F,
+        #4D0082
+    );
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.logo{
+    width:100%;
+    height:110px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.logo i{
+    color:white;
+    font-size:55px;
+}
+
+.sidebar nav{
+    margin-top:40px;
+
+    display:flex;
+    flex-direction:column;
+    gap:50px;
+}
+
+.sidebar nav a{
+    color:white;
+    font-size:52px;
+    transition:.3s;
+}
+
+.sidebar nav a:hover{
+    transform:scale(1.1);
+}
+
+/* TOPO */
+
+.content{
+    flex:1;
+}
+
+.topbar{
+    height:95px;
+    background:#3D006A;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+}
+
+.topbar h1{
+    color:white;
+    font-size:2.3rem;
+    font-weight:500;
+}
+
+.settings-btn{
+    position:absolute;
+    right:35px;
+
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+.settings-btn i{
+    color:white;
+    font-size:55px;
+}
+
+/* PERFIL */
+
+.profile-container{
+    padding:60px;
+
+    display:flex;
+    justify-content:center;
+    gap:60px;
+}
+
+/* LADO ESQUERDO */
+
+.profile-info{
+    width:420px;
+}
+
+.profile-photo{
+    width:170px;
+    height:170px;
+
+    border:2px solid #A887DB;
+    border-radius:50%;
+
+    margin:auto;
+    margin-bottom:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.profile-photo i{
+    font-size:90px;
+    color:#5E2B97;
+}
+
+.row{
+    display:flex;
+    gap:15px;
+}
+
+input{
+    width:100%;
+    margin-bottom:18px;
+
+    border:4px solid #B395DD;
+    border-radius:20px;
+
+    padding:15px;
+
+    font-size:1.3rem;
+    background:white;
+}
+
+.row input{
+    width:50%;
+}
+
+/* MAPA */
+
+.map-card{
+    width:600px;
+    height:300px;
+
+    border:4px solid #B395DD;
+    border-radius:40px;
+
+    overflow:hidden;
+}
+
+.map-background{
+    width:100%;
+    height:100%;
+
+    position:relative;
+
+    background:
+    repeating-linear-gradient(
+        55deg,
+        #F5F1F8 0px,
+        #F5F1F8 50px,
+        #D8C9EE 55px,
+        #F5F1F8 60px
+    );
+}
+
+.map-background::before{
+    content:"";
+
+    position:absolute;
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    75deg,
+    transparent 45%,
+    rgba(173,145,220,.4) 48%,
+    transparent 52%
+    );
+}
+
+.pin{
+    position:absolute;
+
+    top:50%;
+    left:35%;
+
+    transform:translate(-50%,-50%);
+}
+
+.pin i{
+    font-size:110px;
+    color:#4D1D93;
+
+    filter:drop-shadow(
+    0 10px 10px rgba(0,0,0,.2)
+    );
+}
+
+/* RESPONSIVO */
+
+@media(max-width:1100px){
+
+    .profile-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .map-card{
+        width:100%;
+        max-width:600px;
+    }
+}
+
+@media(max-width:768px){
+
+    .sidebar{
+        width:90px;
+    }
+
+    .sidebar nav a{
+        font-size:40px;
+    }
+
+    .logo i{
+        font-size:45px;
+    }
+
+    .row{
+        flex-direction:column;
+    }
+
+    .row input{
+        width:100%;
+    }
+
+    .profile-info{
+        width:100%;
+    }
+
+    .profile-container{
+        padding:30px;
+    }
+}

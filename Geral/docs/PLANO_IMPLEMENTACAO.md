@@ -42,11 +42,21 @@ transporte-ferroviario/
 │   └── usuarios.html
 
 ├── css/
-│   ├── global.css
+││   ├── global.css
+│   ├── header.css
+│   ├── buttons.css
+│   ├── cards.css
+│   └── forms.css
+
 
 ├── js/
-│   ├── global.js
-
+│   ├── auth.js
+│   ├── dados.js
+│   ├── dashboard.js
+│   ├── trens.js
+│   ├── sensores.js
+│   ├── relatorios.js
+│   └── usuarios.js
 
 ├── assets/
 │   ├── images/
