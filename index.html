@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Train App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <section id="screen-splash" class="screen active">
+            <div class="splash-content">
+                <div class="logo-wrapper">
+                    <span class="logo-icon-train">🚂</span>
+                </div>
+                <h1>A-TRAIN</h1>
+            </div>
+            <div class="loading-footer">
+                <span>Carregando...</span>
+                <div class="spinner"></div>
+            </div>
+        </section>
+
+        <section id="screen-register" class="screen">
+            <button class="close-btn" onclick="navigateTo('screen-splash')">✕</button>
+            <div class="top-accent-circle">
+                <span class="mini-logo">🚂</span>
+            </div>
+            
+            <div class="avatar-container">
+                <div class="avatar-placeholder">👤</div>
+                <h2>Olá, Username!</h2>
+            </div>
+
+            <form class="form-container" onsubmit="event.preventDefault(); navigateTo('screen-login');">
+                <div class="input-group">
+                    <input type="text" placeholder="Escolha seu nome de usuário" required minlength="3">
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Digite seu Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Digite sua senha" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Confirme sua senha" required>
+                </div>
+                <button type="submit" class="btn-primary">Cadastrar</button>
+            </form>
+            <div class="bottom-accent-circle"></div>
+        </section>
+
+        <section id="screen-login" class="screen">
+            <button class="close-btn" onclick="navigateTo('screen-register')">✕</button>
+            <div class="top-accent-circle right">
+                <span class="mini-logo">🚂</span>
+            </div>
+            
+            <div class="header-info-text">
+                Inicialização carregou<br>Pagina de Login
+            </div>
+
+            <div class="avatar-container">
+                <div class="avatar-placeholder">👤</div>
+                <h2>Olá, Username!</h2>
+            </div>
+
+            <form class="form-container" onsubmit="event.preventDefault(); navigateTo('screen-home');">
+                <div class="input-group password-wrapper">
+                    <input type="password" id="login-pass" placeholder="Senha" required>
+                    <button type="button" class="toggle-password" onclick="togglePasswordVisibility('login-pass', this)">👁️</button>
+                </div>
+                
+                <button type="button" class="btn-link" onclick="navigateTo('screen-forgot')">
+                    Esqueci minha senha ❯
+                </button>
+
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+            <div class="bottom-accent-circle"></div>
+        </section>
+
+        <section id="screen-forgot" class="screen">
+            <button class="close-btn" onclick="navigateTo('screen-login')">✕</button>
+            <div class="screen-header-simple">
+                <span class="mini-logo-inline">🚂</span>
+                <span>Recuperação de Senha</span>
+            </div>
+
+            <div class="content-block">
+                <h3>Informe o seu email para continuar</h3>
+                <p class="instruction-text">Informe o mesmo email que você utilizou para abrir a sua conta no <strong>A-Train</strong></p>
+            </div>
+
+            <form class="form-container" onsubmit="event.preventDefault(); navigateTo('screen-code');">
+                <div class="input-group icon-right">
+                    <input type="email" placeholder="Email" required>
+                    <span class="field-icon">✉️</span>
+                </div>
+                <button type="submit" class="btn-primary">Avançar</button>
+            </form>
+            <div class="bottom-accent-circle"></div>
+        </section>
+
+        <section id="screen-code" class="screen">
+            <button class="close-btn" onclick="navigateTo('screen-forgot')">✕</button>
+            <div class="screen-header-simple">
+                <span class="mini-logo-inline">🚂</span>
+                <span>Nova senha de acesso</span>
+            </div>
+
+            <div class="content-block center-text">
+                <h3>Insira o código de 6 letras que foi enviado para o seu email</h3>
+                <span class="email-highlight">example@gmail.com</span>
+            </div>
+
+            <form class="form-container" onsubmit="event.preventDefault(); navigateTo('screen-reset-pass');">
+                <div class="code-inputs-container">
+                    <input type="text" maxlength="1" class="code-input" required>
+                    <input type="text" maxlength="1" class="code-input" required>
+                    <input type="text" maxlength="1" class="code-input" required>
+                    <input type="text" maxlength="1" class="code-input" required>
+                    <input type="text" maxlength="1" class="code-input" required>
+                    <input type="text" maxlength="1" class="code-input" required>
+                </div>
+
+                <div class="resend-container">
+                    <p>Não recebeu nenhum código?</p>
+                    <button type="button" class="btn-primary secondary-color" onclick="alert('Código reenviado!')">Reenviar código</button>
+                </div>
+            </form>
+            <div class="bottom-accent-circle"></div>
+        </section>
+
+        <section id="screen-reset-pass" class="screen">
+            <button class="close-btn" onclick="navigateTo('screen-login')">✕</button>
+            <div class="screen-header-simple">
+                <span class="mini-logo-inline">🚂</span>
+                <span>Nova senha de acesso</span>
+            </div>
+
+            <div class="content-block">
+                <h3>Redefinir sua senha</h3>
+                <p class="instruction-text">Preencha os campos abaixo</p>
+            </div>
+
+            <form class="form-container" onsubmit="event.preventDefault(); alert('Senha alterada!'); navigateTo('screen-login');">
+                <div class="input-group password-wrapper">
+                    <input type="password" id="reset-pass" placeholder="Insira a sua nova senha" required>
+                    <button type="button" class="toggle-password" onclick="togglePasswordVisibility('reset-pass', this)">👁️</button>
+                </div>
+
+                <div class="input-group password-wrapper">
+                    <input type="password" id="reset-pass-confirm" placeholder="Confirme a sua senha" required>
+                    <button type="button" class="toggle-password" onclick="togglePasswordVisibility('reset-pass-confirm', this)">👁️</button>
+                </div>
+
+                <button type="submit" class="btn-primary">Redefinir Senha</button>
+                <button type="button" class="btn-cancel" onclick="navigateTo('screen-login')">Cancelar</button>
+            </form>
+            <div class="bottom-accent-circle"></div>
+        </section>
+
+        <section id="screen-home" class="screen screen-internal">
+            <header class="app-header">
+                <span class="header-logo">🚂</span>
+                <h2>Home</h2>
+                <button class="settings-trigger" onclick="navigateTo('screen-settings')">⚙️</button>
+            </header>
+            
+            <div class="internal-content menu-list">
+                <button class="menu-item-large" onclick="navigateTo('screen-schedules')">
+                    <span class="icon-circle">➔</span> Horários
+                </button>
+                <button class="menu-item-large" onclick="navigateTo('screen-locations')">
+                    <span class="icon-circle">➔</span> Locais
+                </button>
+                <button class="menu-item-large" onclick="navigateTo('screen-help')">
+                    <span class="icon-circle">➔</span> Ajuda
+                </button>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-btn active" onclick="navigateTo('screen-home')">🏠</button>
+                <button class="nav-btn" onclick="navigateTo('screen-profile')">👤</button>
+                <button class="nav-btn" onclick="navigateTo('screen-notifications')">🔔</button>
+            </nav>
+        </section>
+
+        <section id="screen-schedules" class="screen screen-internal">
+            <header class="app-header">
+                <button class="back-nav-btn" onclick="navigateTo('screen-home')">❮ Back</button>
+                <h2>Horários</h2>
+                <span class="header-logo">🚂</span>
+            </header>
+
+            <div class="internal-content schedules-layout">
+                <div class="schedule-card-item">
+                    <div class="card-line-indicator line-purple"></div>
+                    <div class="card-details">
+                        <h4>Linha Amarela (Norte-Sul)</h4>
+                        <p>Próximo Trem: 14:35 — Intervalo: 12 min</p>
+                    </div>
+                </div>
+                <div class="schedule-card-item">
+                    <div class="card-line-indicator line-purple"></div>
+                    <div class="card-details">
+                        <h4>Linha Lilás (Expressa Leste)</h4>
+                        <p>Próximo Trem: 14:42 — Intervalo: 8 min</p>
+                    </div>
+                </div>
+                <div class="schedule-card-item">
+                    <div class="card-line-indicator line-purple"></div>
+                    <div class="card-details">
+                        <h4>Linha Prata (Circular Central)</h4>
+                        <p>Próximo Trem: 14:39 — Intervalo: 15 min</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-btn active" onclick="navigateTo('screen-home')">🏠</button>
+                <button class="nav-btn" onclick="navigateTo('screen-profile')">👤</button>
+                <button class="nav-btn" onclick="navigateTo('screen-notifications')">🔔</button>
+            </nav>
+        </section>
+
+        <section id="screen-locations" class="screen screen-internal">
+            <header class="app-header">
+                <button class="back-nav-btn" onclick="navigateTo('screen-home')">❮ Back</button>
+                <h2>Locais</h2>
+                <span class="header-logo">🚂</span>
+            </header>
+
+            <div class="internal-content locations-layout">
+                <div class="location-card">
+                    <div class="location-img-placeholder">🏙️ Estação Central</div>
+                    <div class="location-info">
+                        <h5>Estação da Luz - Central</h5>
+                        <p>Conexão com linhas de metrô e ônibus municipais.</p>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="location-img-placeholder">🌳 Terminal Sul</div>
+                    <div class="location-info">
+                        <h5>Terminal Intermodal Sul</h5>
+                        <p>Acesso rápido ao polo industrial e aeroporto secundário.</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-btn active" onclick="navigateTo('screen-home')">🏠</button>
+                <button class="nav-btn" onclick="navigateTo('screen-profile')">👤</button>
+                <button class="nav-btn" onclick="navigateTo('screen-notifications')">🔔</button>
+            </nav>
+        </section>
+
+        <section id="screen-help" class="screen screen-internal">
+            <header class="app-header">
+                <button class="back-nav-btn" onclick="navigateTo('screen-home')">❮ Back</button>
+                <h2>Ajuda</h2>
+                <span class="header-logo">🚂</span>
+            </header>
+
+            <div class="internal-content help-layout">
+                <div class="accordion-item" id="faq-item-1">
+                    <button class="accordion-header" onclick="toggleAccordion('faq-item-1')">
+                        <span>Como funcionam os reembolsos?</span>
+                        <span class="arrow">❮</span>
+                    </button>
+                    <div class="accordion-content internal-text-block">
+                        <p>Os cancelamentos de bilhetes podem ser solicitados até 30 minutos antes da partida do trem diretamente pelo painel financeiro em suas configurações.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="faq-item-2">
+                    <button class="accordion-header" onclick="toggleAccordion('faq-item-2')">
+                        <span>Como reportar um objeto perdido?</span>
+                        <span class="arrow">❮</span>
+                    </button>
+                    <div class="accordion-content internal-text-block">
+                        <p>Dirija-se ao guichê de atendimento na Estação Central ou abra um chamado anexando a descrição do pertence esquecido no botão abaixo.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="faq-item-3">
+                    <button class="accordion-header" onclick="toggleAccordion('faq-item-3')">
+                        <span>O aplicativo funciona offline?</span>
+                        <span class="arrow">❮</span>
+                    </button>
+                    <div class="accordion-content internal-text-block">
+                        <p>As tabelas de horários básicos salvos ficam disponíveis offline, mas as atualizações em tempo real exigem conexão de dados ativa.</p>
+                    </div>
+                </div>
+
+                <button class="btn-help-link" onclick="navigateTo('screen-ticket-support')">Quer Ajuda?</button>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-btn active" onclick="navigateTo('screen-home')">🏠</button>
+                <button class="nav-btn" onclick="navigateTo('screen-profile')">👤</button>
+                <button class="nav-btn" onclick="navigateTo('screen-notifications')">🔔</button>
+            </nav>
+        </section>
+
+        <section id="screen-ticket-support" class="screen screen-internal">
+            <header class="app-header">
+                <button class="back-nav-btn" onclick="navigateTo('screen-help')">❮ Back</button>
+                <h2>Abrir Chamado</h2>
+                <span class="header-logo">🚂</span>
+            </header>
+            <div class="internal-content ticket-layout">
+                <h3>Como podemos ajudar?</h3>
+                <p class="ticket-sub">Descreva o problema encontrado com detalhes.</p>
+                <form class="form-container" onsubmit="event.preventDefault(); alert('Chamado aberto com sucesso!'); navigateTo('screen-help');">
+                    <div class="input-group">
+                        <input type="text" placeholder="Assunto do chamado" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea placeholder="Escreva sua mensagem aqui..." class="ticket-textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Enviar Chamado</button>
+                </form>
+            </div>
+            <nav class="bottom-nav">
+                <button class="nav-btn active" onclick="navigateTo('screen-home')">🏠</button>
+                <button class="nav-btn" onclick="navigateTo('screen-profile')">👤</button>
+                <button class="nav-btn" onclick="navigateTo('screen-notifications')">🔔</button>
+            </nav>
+        </section>
+
+        <section id="screen-profile" class="screen screen-internal">
+            <header class="app-header">
+                <span class="header-logo">🚂</span>
+                <h2>Meu Perfil</h2>
+                <button class="settings-trigger" onclick="navigateTo('screen-settings')">⚙️</button>
+            </header>
+
+            <div class="internal-content profile-layout">
+                <div class="profile-avatar-big">👤</div>
+                
+                <div class="profile-row-double">
+                    <div class="profile-box">Nome</div>
+                    <div class="profile-box">Ativo desde</div>
+                </div>
+                <div class="profile-box full-width">E-mail</div>
+                <div class="profile-box half-width">Telefone</div>
+
+                <div class="map-container">
+                    <span class="map-title">Endereço</span>
+                    <div class="mock-map">
+                        <span class="map-pin">📍</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-btn" onclick="navigateTo('screen-home')">🏠</button>
+                <button class="nav-btn active" onclick="navigateTo('screen-profile')">👤</button>
+                <button class="nav-btn" onclick="navigateTo('screen-notifications')">🔔</button>
+            </nav>
+        </section>
+
+        <section id="screen-notifications" class="screen screen-internal">
+            <header class="app-header">
+                <span class="header-logo">🚂</span>
+                <h2>Notificações</h2>
+                <button class="settings-trigger" onclick="navigateTo('screen-settings')">⚙️</button>
+            </header>
+
+            <div class="internal-content notifications-layout">
+                <div class="alert-box purple-alert">
+                    <span>Seu trem chegará em 5 minutos.</span>
+                    <span class="alert-icon">⚠️</span>
+                </div>
+
+                <div class="alert-box purple-alert pill">
+                    <span>Seu trem está a caminho</span>
+                </div>
+
+                <div class="pagination-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+                <div class="alert-box purple-card">
+                    <button class="dismiss-alert" onclick="this.parentElement.remove()">✕</button>
+                    <p>Seu trem registrou uma velocidade de 160km/h.</p>
+                </div>
+
+                <div class="alert-box purple-card">
+                    <button class="dismiss-alert" onclick="this.parentElement.remove()">✕</button>
+                    <p>Fique ligado em nossas promoções.</p>
+                </div>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-btn" onclick="navigateTo('screen-home')">🏠</button>
+                <button class="nav-btn" onclick="navigateTo('screen-profile')">👤</button>
+                <button class="nav-btn active" onclick="navigateTo('screen-notifications')">🔔</button>
+            </nav>
+        </section>
+
+        <section id="screen-settings" class="screen screen-internal">
+            <header class="app-header">
+                <span class="header-logo">🚂</span>
+                <h2>Configurações</h2>
+                <button class="settings-trigger active" onclick="navigateTo('screen-home')">⚙️</button>
+            </header>
+
+            <div class="internal-content settings-layout">
+                <div class="accordion-item" id="accordion-idioma">
+                    <button class="accordion-header" onclick="toggleAccordion('accordion-idioma')">
+                        <span>Idioma</span>
+                        <span class="arrow">❮</span>
+                    </button>
+                    <div class="accordion-content">
+                        <label class="radio-option">English (EUA) <input type="radio" name="lang"></label>
+                        <label class="radio-option">Português <input type="radio" name="lang" checked></label>
+                        <label class="radio-option">Espanhol <input type="radio" name="lang"></label>
+                        <label class="radio-option">Russo <input type="radio" name="lang"></label>
+                        <label class="radio-option">Árabe <input type="radio" name="lang"></label>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="accordion-senhas">
+                    <button class="accordion-header" onclick="toggleAccordion('accordion-senhas')">
+                        <span>Senhas</span>
+                        <span class="arrow">❮</span>
+                    </button>
+                    <div class="accordion-content links-list">
+                        <a href="#" onclick="navigateTo('screen-change-password-internal')">Alterar sua senha</a>
+                        <a href="#" onclick="navigateTo('screen-forgot')">Recuperar senha</a>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="accordion-contas">
+                    <button class="accordion-header" onclick="toggleAccordion('accordion-contas')">
+                        <span>Contas</span>
+                        <span class="arrow">❮</span>
+                    </button>
+                    <div class="accordion-content links-list">
+                        <a href="#" onclick="navigateTo('screen-switch-account')">Mudar de conta</a>
+                        <a href="#" onclick="alert('Conta migrada!')">Migrar Conta</a>
+                        <a href="#" onclick="alert('Conta apagada!')">Apagar Conta</a>
+                        <a href="#" onclick="alert('Conta desativada!')">Desativar Conta</a>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="accordion-pagamento">
+                    <button class="accordion-header" onclick="toggleAccordion('accordion-pagamento')">
+                        <span>Pagamento</span>
+                        <span class="arrow">❮</span>
+                    </button>
+                    <div class="accordion-content links-list">
+                        <a href="#" onclick="navigateTo('screen-register-payment')">Registrar forma de pagamento</a>
+                        <a href="#" onclick="alert('Forma alterada!')">Alterar forma de pagamento</a>
+                        <a href="#" onclick="navigateTo('screen-balance-view')">Saldo</a>
+                        <a href="#" onclick="alert('Suporte contra fraudes acionado!')">Problemas com fraudes</a>
+                    </div>
+                </div>
+
+                <button class="btn-help-link" onclick="navigateTo('screen-help')">Quer Ajuda?</button>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-btn" onclick="navigateTo('screen-home')">🏠</button>
+                <button class="nav-btn" onclick="navigateTo('screen-profile')">👤</button>
+                <button class="nav-btn" onclick="navigateTo('screen-notifications')">🔔</button>
+            </nav>
+        </section>
+
+        <section id="screen-change-password-internal" class="screen screen-internal">
+            <header class="app-header">
+                <button class="back-nav-btn" onclick="navigateTo('screen-settings')">❮ Back</button>
+                <h2>Alterar Senha</h2>
+                <span class="header-logo">🚂</span>
+            </header>
+            <div class="internal-content form-screen-padding">
+                <form class="form-container" onsubmit="event.preventDefault(); alert('Senha modificada!'); navigateTo('screen-settings');">
+                    <div class="input-group password-wrapper">
+                        <input type="password" id="old-pass" placeholder="Senha Atual" required>
+                        <button type="button" class="toggle-password" onclick="togglePasswordVisibility('old-pass', this)">👁️</button>
+                    </div>
+                    <div class="input-group password-wrapper">
+                        <input type="password" id="new-pass" placeholder="Nova Senha" required>
+                        <button type="button" class="toggle-password" onclick="togglePasswordVisibility('new-pass', this)">👁️</button>
+                    </div>
+                    <div class="input-group password-wrapper">
+                        <input type="password" id="confirm-new-pass" placeholder="Confirme a Nova Senha" required>
+                        <button type="button" class="toggle-password" onclick="togglePasswordVisibility('confirm-new-pass', this)">👁️</button>
+                    </div>
+                    <button type="submit" class="btn-primary">Atualizar Senha</button>
+                </form>
+            </div>
+            <nav class="bottom-nav">
+                <button class="nav-btn" onclick="navigateTo('screen-home')">🏠</button>
+                <button class="nav-btn" onclick="navigateTo('screen-profile')">👤</button>
+                <button class="nav-btn" onclick="navigateTo('screen-notifications')">🔔</button>
+            </nav>
+        </section>
+
+        <section id="screen-switch-account" class="screen screen-internal">
+            <header class="app-header">
+                <button class="back-nav-btn" onclick="navigateTo('screen-settings')">❮ Back</button>
+                <h2>Mudar de Conta</h2>
+                <span class="header-logo">🚂</span>
+            </header>
+            <div class="internal-content accounts-layout">
+                <div class="account-row-item current-acc">
+                    <div class="acc-avatar">👤</div>
+                    <div class="acc-info">
+                        <strong>Username Principal</strong>
+                        <span>example@gmail.com</span>
+                    </div>
+                    <span class="check-active">✓</span>
+                </div>
+                <div class="account-row-item" onclick="alert('Alternando conta...'); navigateTo('screen-home');">
+                    <div class="acc-avatar">👤</div>
+                    <div class="acc-info">
+                        <strong>Username Secundário</strong>
+                        <span>work@gmail.com</span>
+                    </div>
+                </div>
+                <button class="menu-item-large" onclick="navigateTo('screen-register')">
+                    <span class="icon-circle">+</span> Adicionar Nova Conta
+                </button>
+            </div>
+            <nav class="bottom-nav">
+                <button class="nav-btn" onclick="navigateTo('screen-home')">🏠</button>
+                <button class="nav-btn" onclick="navigateTo('screen-profile')">👤</button>
+                <button class="nav-btn" onclick="navigateTo('screen-notifications')">🔔</button>
+            </nav>
+        </section>
+
+        <section id="screen-register-payment" class="screen screen-internal">
+            <header class="app-header">
+                <button class="back-nav-btn" onclick="navigateTo('screen-settings')">❮ Back</button>
+                <h2>Registrar Pagamento</h2>
+                <span class="header-logo">🚂</span>
+            </header>
+            <div class="internal-content form-screen-padding">
+                <form class="form-container" onsubmit="event.preventDefault(); alert('Forma de pagamento registrada!'); navigateTo('screen-settings');">
+                    <div class="input-group">
+                        <input type="text" placeholder="Nome Impresso no Cartão" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Número do Cartão" maxlength="19" required>
+                    </div>
+                    <div class="profile-row-double">
+                        <div class="input-group"><input type="text" placeholder="Validade (MM/AA)" maxlength="5" required></div>
+                        <div class="input-group"><input type="password" placeholder="CVV" maxlength="4" required></div>
+                    </div>
+                    <button type="submit" class="btn-primary">Salvar Cartão</button>
+                </form>
+            </div>
+            <nav class="bottom-nav">
+                <button class="nav-btn" onclick="navigateTo('screen-home')">🏠</button>
+                <button class="nav-btn" onclick="navigateTo('screen-profile')">👤</button>
+                <button class="nav-btn" onclick="navigateTo('screen-notifications')">🔔</button>
+            </nav>
+        </section>
+
+        <section id="screen-balance-view" class="screen screen-internal">
+            <header class="app-header">
+                <button class="back-nav-btn" onclick="navigateTo('screen-settings')">❮ Back</button>
+                <h2>Saldo Disponível</h2>
+                <span class="header-logo">🚂</span>
+            </header>
+            <div class="internal-content balance-layout">
+                <div class="balance-card-display">
+                    <span>Saldo em Carteira</span>
+                    <h2>R$ 48,50</h2>
+                </div>
+                <button class="btn-primary" onclick="alert('Redirecionando para recarga...')">Adicionar Crédito</button>
+            </div>
+            <nav class="bottom-nav">
+                <button class="nav-btn" onclick="navigateTo('screen-home')">🏠</button>
+                <button class="nav-btn" onclick="navigateTo('screen-profile')">👤</button>
+                <button class="nav-btn" onclick="navigateTo('screen-notifications')">🔔</button>
+            </nav>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
