@@ -40,22 +40,27 @@ body {
 
 .card-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Imagem na esquerda, X na direita */
     align-items: center;
     width: 100%;
     margin-bottom: 24px;
 }
 
-.logo-trem {
-    border: 2px solid #233240;
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
+/* Container do logotipo */
+.logo-atrain {
+    width: 55px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #233240;
-    font-size: 20px;
+}
+
+/* Força a imagem a aparecer no tamanho correto */
+.logo-atrain img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
 }
 
 .btn-close {
@@ -186,7 +191,6 @@ body {
     font-size: 11px;
 }
 
-
 .form-footer {
     margin-top: auto; 
     width: 100%;
@@ -214,7 +218,6 @@ body {
 .btn-submit:active {
     transform: scale(0.98);
 }
-
 
 @media (min-width: 1024px) {
     body {
