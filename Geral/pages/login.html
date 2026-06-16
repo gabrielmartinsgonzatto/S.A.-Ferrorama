@@ -14,7 +14,7 @@
 
     <main class="app-container">
         
-        <section class="card active" id="tela-cadastro">
+        <section class="card" id="tela-cadastro">
             <header class="card-header">
                 <div class="logo-atrain">
                     <img src="../assets/Logo A-Train.webp" alt="Logo A-Train">
@@ -58,8 +58,7 @@
             </form>
         </section>
 
-    
-        <section class="card" id="tela-login">
+        <section class="card active" id="tela-login">
             <header class="card-header">
                 <div class="logo-atrain">
                     <img src="../assets/Logo A-Train.webp" alt="Logo A-Train">
@@ -81,7 +80,7 @@
                     <input type="password" id="login-senha" placeholder=" " required autocomplete="current-password">
                     <label for="login-senha">Senha</label>
                     <button type="button" class="btn-toggle-visibility" aria-label="Mostrar ou ocultar senha">
-                        <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                        <i class="fa-regular fa-eye-slash" aria-hidden="true"></i>
                     </button>
                 </div>
 
@@ -97,28 +96,195 @@
             </form>
         </section>
 
+        <section class="card" id="tela-esqueceu-email">
+            <header class="card-header">
+                <div class="logo-atrain">
+                    <img src="../assets/Logo A-Train.webp" alt="Logo A-Train">
+                </div>
+                <button type="button" class="btn-close btn-voltar-login" aria-label="Fechar">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </header>
+
+            <div class="text-heading-summary">
+                <h3>Informe o seu email para continuar</h3>
+                <p>Informe o mesmo email que você utilizou para abrir a sua conta no A-TRAIN</p>
+            </div>
+
+            <form class="form-content">
+                <div class="input-group email-wrapper">
+                    <input type="email" id="forgot-email" placeholder=" " required autocomplete="email">
+                    <label for="forgot-email">Email</label>
+                    <span class="input-icon-right"><i class="fa-regular fa-envelope"></i></span>
+                </div>
+
+                <footer class="form-footer">
+                    <button type="button" class="btn-submit" id="btn-avancar-email">Avançar</button>
+                </footer>
+            </form>
+        </section>
+
+        <section class="card" id="tela-esqueceu-codigo">
+            <header class="card-header">
+                <div class="logo-atrain">
+                    <img src="../assets/Logo A-Train.webp" alt="Logo A-Train">
+                </div>
+                <button type="button" class="btn-close btn-voltar-login" aria-label="Fechar">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </header>
+
+            <div class="text-heading-summary">
+                <span class="sub-badge">Nova senha de acesso</span>
+                <p class="instruction-text">Insira o código de 6 letras que foi enviado para o seu email</p>
+                <strong class="user-email-display">example@gmail.com</strong>
+            </div>
+
+            <form class="form-content">
+                <div class="code-digits-container">
+                    <input type="text" maxlength="1" class="code-input" required>
+                    <input type="text" maxlength="1" class="code-input" required>
+                    <input type="text" maxlength="1" class="code-input" required>
+                    <input type="text" maxlength="1" class="code-input" required>
+                    <input type="text" maxlength="1" class="code-input" required>
+                    <input type="text" maxlength="1" class="code-input" required>
+                </div>
+
+                <span class="resend-text">Não recebeu nenhum código?</span>
+
+                <footer class="form-footer">
+                    <button type="button" class="btn-submit btn-wide" id="btn-avancar-codigo">Reenviar código</button>
+                </footer>
+            </form>
+        </section>
+
+        <section class="card" id="tela-esqueceu-redefinir">
+            <header class="card-header">
+                <div class="logo-atrain">
+                    <img src="../assets/Logo A-Train.webp" alt="Logo A-Train">
+                </div>
+                <button type="button" class="btn-close btn-voltar-login" aria-label="Fechar">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </header>
+
+            <div class="text-heading-summary">
+                <span class="sub-badge">Nova senha de acesso</span>
+                <h3>Redefinir sua senha</h3>
+                <p class="subtitle-fields">Preencha os campos abaixo</p>
+            </div>
+
+            <form class="form-content">
+                <div class="input-group password-wrapper">
+                    <input type="password" id="new-password-field" placeholder=" " required autocomplete="new-password">
+                    <label for="new-password-field">Insira a sua nova senha</label>
+                    <button type="button" class="btn-toggle-visibility" aria-label="Mostrar ou ocultar senha">
+                        <i class="fa-regular fa-eye-slash" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <div class="input-group password-wrapper">
+                    <input type="password" id="confirm-new-password-field" placeholder=" " required autocomplete="new-password">
+                    <label for="confirm-new-password-field">Confirme a sua senha</label>
+                    <button type="button" class="btn-toggle-visibility" aria-label="Mostrar ou ocultar senha">
+                        <i class="fa-regular fa-eye-slash" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <footer class="form-footer flex-footer">
+                    <button type="submit" class="btn-submit btn-wide">Redefinir Senha</button>
+                    <a href="#" class="btn-cancelar-processo btn-voltar-login">Cancelar</a>
+                </footer>
+            </form>
+        </section>
+
     </main>
 
     <script>
         const telaCadastro = document.getElementById('tela-cadastro');
         const telaLogin = document.getElementById('tela-login');
+        const telaEsqueceuEmail = document.getElementById('tela-esqueceu-email');
+        const telaEsqueceuCodigo = document.getElementById('tela-esqueceu-codigo');
+        const telaEsqueceuRedefinir = document.getElementById('tela-esqueceu-redefinir');
+
         const btnFecharCadastro = document.getElementById('btn-fechar-cadastro');
         const btnFecharLogin = document.getElementById('btn-fechar-login');
         const linkEsqueci = document.getElementById('link-esqueci-senha');
+        
+        const btnAvancarEmail = document.getElementById('btn-avancar-email');
+        const btnAvancarCodigo = document.getElementById('btn-avancar-codigo');
+
+        function esconderTodasTelas() {
+            telaCadastro.classList.remove('active');
+            telaLogin.classList.remove('active');
+            telaEsqueceuEmail.classList.remove('active');
+            telaEsqueceuCodigo.classList.remove('active');
+            telaEsqueceuRedefinir.classList.remove('active');
+        }
 
         btnFecharCadastro.addEventListener('click', () => {
-            telaCadastro.classList.remove('active');
+            esconderTodasTelas();
             telaLogin.classList.add('active');
         });
 
         btnFecharLogin.addEventListener('click', () => {
-            telaLogin.classList.remove('active');
+            esconderTodasTelas();
             telaCadastro.classList.add('active');
         });
 
         linkEsqueci.addEventListener('click', (e) => {
             e.preventDefault();
-            alert('Funcionalidade de recuperar senha simulada com sucesso!');
+            esconderTodasTelas();
+            telaEsqueceuEmail.classList.add('active');
+        });
+
+        btnAvancarEmail.addEventListener('click', () => {
+            esconderTodasTelas();
+            telaEsqueceuCodigo.classList.add('active');
+        });
+
+        btnAvancarCodigo.addEventListener('click', () => {
+            esconderTodasTelas();
+            telaEsqueceuRedefinir.classList.add('active');
+        });
+
+        document.querySelectorAll('.btn-voltar-login').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                esconderTodasTelas();
+                telaLogin.classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.btn-toggle-visibility').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const input = this.parentElement.querySelector('input');
+                const icon = this.querySelector('i');
+                
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                }
+            });
+        });
+
+        const inputsCodigo = document.querySelectorAll('.code-input');
+        inputsCodigo.forEach((input, index) => {
+            input.addEventListener('input', () => {
+                if (input.value.length === 1 && index < inputsCodigo.length - 1) {
+                    inputsCodigo[index + 1].focus();
+                }
+            });
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && input.value.length === 0 && index > 0) {
+                    inputsCodigo[index - 1].focus();
+                }
+            });
         });
     </script>
 </body>
