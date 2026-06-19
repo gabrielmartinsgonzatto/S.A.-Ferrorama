@@ -18,20 +18,49 @@
 
   <!-- Sidebar -->
   <aside class="sidebar">
-    <div class="logo">
-      <img src="../assets/Logo A-Train.png" alt="Logo A-Train" class="logo-img">
-    </div>
-    <nav>
-      <a href="dashboard.html"><img src="../assets/home.png" class="icone-menu"><span>Home</span></a>
-      <a href="#"><img src="../assets/train.png" class="icone-menu"><span>Trens</span></a>
-      <a href="#"><img src="../assets/alerta.png" class="icone-menu"><span>Alertas</span></a>
-      <a href="#"><img src="../assets/configuracao.png" class="icone-menu"><span>Configurações</span></a>
-    </nav>
-    <div class="bottom">
-      <a href="usuarios.html" class="perfil"><img src="../assets/usuario.png" class="icone-menu"><span>Usuário</span></a>
-      <a href="login.html" class="sair"><img src="../assets/sair.png" class="icone-menu"><span>Sair</span></a>
-    </div>
-  </aside>
+
+<div class="logo">
+  <img src="../assets/Logo A-Train.png" alt="Logo A-Train" class="logo-img">
+</div>
+
+
+  <nav>
+    <a  href="../pages/dashboard.html">
+      <img src="../assets/home.png" alt="Home" class="icone-menu">
+      <span>Home</span>
+    </a>
+
+    <a href="#">
+      <img src="../assets/train.png" alt="Trens" class="icone-menu">
+      <span>Trens</span>
+    </a>
+
+    <a href="#">
+      <img src="../assets/alerta.png" alt="Alertas" class="icone-menu">
+      <span>Alertas</span>
+    </a>
+
+
+
+    <a href="#">
+      <img src="../assets/configuracao.png" alt="Configurações" class="icone-menu">
+      <span>Configurações</span>
+    </a>
+  </nav>
+
+  <div class="bottom">
+  <a class="active" href="../pages/usuarios.html" class="perfil">
+    <img src="../assets/usuario.png" alt="Usuário" class="icone-menu">
+    <span>Usuário</span>
+  </a>
+
+    <a href="#" class="sair">
+      <img src="../assets/sair.png" alt="Sair" class="icone-menu">
+      <span>Sair</span>
+    </a>
+  </div>
+
+</aside>
 
   <!-- Conteúdo principal -->
   <main>
@@ -70,7 +99,7 @@
 
       
       <!-- Painel grande da direita -->
-     <section class="painel-direita">
+    <section class="painel-direita">
 
   <div class="topo-localizacao">
     <h3>Localização Atual</h3>
@@ -86,11 +115,19 @@
     <p>São Paulo, SP - Brasil</p>
   </div>
 
-</section>
-    </div>
-  </main>
+  <!-- Resumo da Conta -->
+  <div class="resumo-conta">
+    <h3>Resumo da Conta</h3>
+    <ul>
+      <li><strong>Perfil:</strong> Operador</li>
+      <li><strong>Nível de Acesso:</strong> Nível 2</li>
+      <li><strong>Último Acesso:</strong> 23/05/2025 14:32</li>
+      <li><strong>Status:</strong> Ativo</li>
+    </ul>
+  </div>
 
-</div>
+</section>
+
 
 <script>
   const toggleBtn = document.querySelector('.menu-toggle');

@@ -283,69 +283,216 @@ main{
     display: block;
 }
 
+.menu-toggle{
+    display: none
+}
+
+/* ===== CELULAR ===== */
+
+@media (max-width:768px){
+
+body{
+overflow-x:hidden;
+}
+
+.container{
+display:block;
+}
 
 
-/* ===== RESPONSIVIDADE ===== */
+/* BOTÃO MENU (igual usuários) */
 
-@media (max-width: 768px) {
+.menu-toggle{
 
-    .container {
-        flex-direction: column;
-    }
+display:block;
 
-    .sidebar {
-        width: 100%;
-        height: auto;
-        padding: 15px;
-    }
+position:fixed;
 
-    .sidebar nav {
-        flex-direction: row;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
+top:15px;
 
-    .sidebar nav a {
-        font-size: 13px;
-        padding: 8px;
-    }
+left:15px;
 
-    .bottom {
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 15px;
-    }
+background:#3b0078;
 
-    .topo {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
+color:#fff;
 
-    .horario {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+border:none;
 
-    .cards {
-        grid-template-columns: 1fr;
-    }
+font-size:26px;
 
-    .principal {
-        grid-template-columns: 1fr;
-    }
+padding:8px 12px;
 
-    .inferior {
-        grid-template-columns: 1fr;
-    }
+border-radius:8px;
 
-    .grafico-placeholder {
-        width: 140px;
-        height: 140px;
-        font-size: 32px;
-    }
+cursor:pointer;
 
-    .mapa-area {
-        height: 220px;
-    }
+z-index:1100;
+
+}
+
+
+/* NAVBAR IGUAL USUÁRIOS */
+
+.sidebar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:220px;
+
+height:100vh;
+
+transform:translateX(-100%);
+
+transition:.3s;
+
+z-index:1000;
+
+padding:20px;
+
+overflow-y:auto;
+
+}
+
+
+.sidebar.active{
+
+transform:translateX(0);
+
+}
+
+
+.logo{
+
+display:flex;
+
+justify-content:center;
+
+margin-bottom:25px;
+
+}
+
+
+.logo-img{
+
+width:75px;
+
+height:auto;
+
+}
+
+
+.sidebar nav{
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+margin-top:20px;
+
+}
+
+
+.sidebar nav a{
+
+width:100%;
+
+}
+
+
+.bottom{
+
+margin-top:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+
+/* DASHBOARD MOBILE */
+
+main{
+
+margin-left:0;
+
+padding:70px 15px 20px;
+
+}
+
+
+.topo{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:10px;
+
+}
+
+
+.horario{
+
+flex-wrap:wrap;
+
+gap:10px;
+
+}
+
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+
+.principal{
+
+grid-template-columns:1fr;
+
+}
+
+
+.inferior{
+
+grid-template-columns:1fr;
+
+}
+
+
+.card,
+.painel{
+
+width:100%;
+
+}
+
+
+.grafico-placeholder{
+
+width:140px;
+
+height:140px;
+
+font-size:32px;
+
+}
+
+
+.mapa-area{
+
+height:220px;
+
+}
+
 }

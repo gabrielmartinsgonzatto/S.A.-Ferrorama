@@ -9,6 +9,8 @@
 
 <body>
 
+<button class="menu-toggle">☰</button>
+
 <div class="container">
 
    
@@ -35,10 +37,7 @@
       <span>Alertas</span>
     </a>
 
-    <a href="#">
-      <img src="../assets/perfil.png" alt="Perfil" class="icone-menu">
-      <span>Perfil</span>
-    </a>
+
 
     <a href="#">
       <img src="../assets/configuracao.png" alt="Configurações" class="icone-menu">
@@ -228,6 +227,17 @@
     </main>
 
 </div>
+
+<script>
+const toggle=document.querySelector('.menu-toggle');
+const sidebar=document.querySelector('.sidebar');
+
+toggle.addEventListener('click',()=>{
+sidebar.classList.toggle('active');
+});
+</script>
+
+
 
 </body>
 </html>
