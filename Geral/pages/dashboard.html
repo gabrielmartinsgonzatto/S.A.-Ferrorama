@@ -4,8 +4,230 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A-TRAIN</title>
+    <link rel="stylesheet" href="../CSS/dashboard.css">
 </head>
+
 <body>
+
+<div class="container">
+
+   
+  <aside class="sidebar">
+
+<div class="logo">
+  <img src="../assets/Logo A-Train.png" alt="Logo A-Train" class="logo-img">
+</div>
+
+
+  <nav>
+    <a class="active" href="#">
+      <img src="../assets/home.png" alt="Home" class="icone-menu">
+      <span>Home</span>
+    </a>
+
+    <a href="#">
+      <img src="../assets/train.png" alt="Trens" class="icone-menu">
+      <span>Trens</span>
+    </a>
+
+    <a href="#">
+      <img src="../assets/alerta.png" alt="Alertas" class="icone-menu">
+      <span>Alertas</span>
+    </a>
+
+    <a href="#">
+      <img src="../assets/perfil.png" alt="Perfil" class="icone-menu">
+      <span>Perfil</span>
+    </a>
+
+    <a href="#">
+      <img src="../assets/configuracao.png" alt="Configurações" class="icone-menu">
+      <span>Configurações</span>
+    </a>
+  </nav>
+
+  <div class="bottom">
+  <a href="../pages/usuarios.html" class="perfil">
+    <img src="../assets/usuario.png" alt="Usuário" class="icone-menu">
+    <span>Usuário</span>
+  </a>
+
+    <a href="#" class="sair">
+      <img src="../assets/sair.png" alt="Sair" class="icone-menu">
+      <span>Sair</span>
+    </a>
+  </div>
+
+</aside>
+
+
+
+
+
+   
+    <main>
+
+       
+        <header class="topo">
+
+            <div>
+                <h1>Olá, Usuário! 👋</h1>
+                <p>Aqui está o resumo das operações ferroviárias de hoje.</p>
+            </div>
+
+            <div class="horario">
+                <span><i class="fa-regular fa-calendar"></i> 02/06/2026</span>
+                <span><i class="fa-regular fa-clock"></i> 12:00</span>
+            </div>
+
+        </header>
+
+
+       
+        <section class="cards">
+
+            <div class="card">
+                <i class="fa-solid fa-train"></i>
+                <h2>12</h2>
+                <p>Trens em Operação</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-wifi"></i>
+                <h2>256</h2>
+                <p>Sensores Ativos</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <h2>5</h2>
+                <p>Manutenções Hoje</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <h2>2</h2>
+                <p>Alertas Ativos</p>
+            </div>
+
+        </section>
+
+
+     
+        <section class="principal">
+
+          
+            <div class="painel">
+
+                <h3>Status da Frota</h3>
+
+                <div class="grafico-placeholder">
+                    18
+                </div>
+
+                <ul>
+                    <li>12 Em Operação</li>
+                    <li>3 Em Manutenção</li>
+                    <li>1 Parado</li>
+                    <li>2 Inativos</li>
+                </ul>
+
+            </div>
+
+
+        
+            <div class="painel mapa">
+
+                <h3>Monitoramento em Tempo Real</h3>
+
+                <div class="mapa-area">
+
+                    <div class="linha"></div>
+
+                    <div class="trem">
+                        <i class="fa-solid fa-train"></i>
+                    </div>
+
+                    <div class="ponto p1">Estação Central</div>
+                    <div class="ponto p2">Terminal Sul</div>
+                    <div class="ponto p3">Depósito Leste</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
     
+        <section class="inferior">
+
+            <div class="painel">
+
+                <h3>Manutenções Pendentes</h3>
+
+                <ul class="lista">
+
+                    <li>
+                        Trem #1024
+                        <span class="alta">Alta</span>
+                    </li>
+
+                    <li>
+                        Trem #2031
+                        <span class="media">Média</span>
+                    </li>
+
+                    <li>
+                        Trem #3098
+                        <span class="media">Média</span>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="painel">
+
+                <h3>Alertas Recentes</h3>
+
+                <ul class="lista">
+
+                    <li>Temperatura elevada</li>
+
+                    <li>Vibração anormal</li>
+
+                    <li>Falha de comunicação</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="painel">
+
+                <h3>Resumo da Operação</h3>
+
+                <ul class="lista">
+
+                    <li>Distância: 2.450 km</li>
+
+                    <li>Energia: 1.250 kWh</li>
+
+                    <li>Pontualidade: 92%</li>
+
+                    <li>Disponibilidade: 98%</li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
 </body>
 </html>

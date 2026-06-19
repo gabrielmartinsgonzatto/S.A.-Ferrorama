@@ -1,85 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Perfil</title>
-
- 
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuários - A-Train</title>
   <link rel="stylesheet" href="../CSS/usuarios.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZmHnM+YIY5t3ZV4y/faTqgFtohetphbbj0EVyF5i1BIsZ+ywDWZCvqsWf9cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+
+<header class="topo">
+  <button class="menu-toggle">☰</button>
+</header>
+
 
 
 <div class="container">
 
-    <!-- MENU LATERAL -->
-    <aside class="sidebar">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="../assets/Logo A-Train.png" alt="Logo A-Train" class="logo-img">
+    </div>
+    <nav>
+      <a href="dashboard.html"><img src="../assets/home.png" class="icone-menu"><span>Home</span></a>
+      <a href="#"><img src="../assets/train.png" class="icone-menu"><span>Trens</span></a>
+      <a href="#"><img src="../assets/alerta.png" class="icone-menu"><span>Alertas</span></a>
+      <a href="#"><img src="../assets/configuracao.png" class="icone-menu"><span>Configurações</span></a>
+    </nav>
+    <div class="bottom">
+      <a href="usuarios.html" class="perfil"><img src="../assets/usuario.png" class="icone-menu"><span>Usuário</span></a>
+      <a href="login.html" class="sair"><img src="../assets/sair.png" class="icone-menu"><span>Sair</span></a>
+    </div>
+  </aside>
 
-        <div class="logo">
-            <i class="fas fa-train"></i>
-        </div>
+  <!-- Conteúdo principal -->
+  <main>
+    </header>
 
-        <nav>
-            <a href="#"><i class="fas fa-house"></i></a>
-            <a href="#" class="active"><i class="fas fa-user"></i></a>
-            <a href="#"><i class="fas fa-bell"></i></a>
-        </nav>
+    <div class="grid">
+      <!-- Painel grande da esquerda -->
+  <section class="painel-esquerda">
+ <div class="perfil-header">
+  <img src="../assets/Meu_Perfil.png" alt="Meu Perfil" class="icone-perfil">
+  <div class="dados-perfil">
+    <h2>João da Silva</h2>
+    <p class="cargo">Operador</p>
+    <p class="violeta">exemplo@ferrovia.com</p>
+    <p class="violeta">(11) 98765-4321</p>
+    <p class="violeta">Membro desde 12/03/2024</p>
+  </div>
+</div>
 
-    </aside>
+  <h3>Informações Pessoais</h3>
+  <ul>
+    <li><strong>Nome Completo:</strong> João da Silva</li>
+    <li><strong>E-mail:</strong> joao.silva@ferrovia.com</li>
+    <li><strong>Telefone:</strong> (11) 98765-4321</li>
+    <li><strong>Cargo / Função:</strong> Operador</li>
+    <li><strong>Turno:</strong> Diurno</li>
+    <li>
+      <button class="btn">Alterar Senha</button>
+      <button class="btn cancelar">Cancelar</button>
+    </li>
+  </ul>
+</section>
 
-    <!-- CONTEÚDO -->
-    <main class="content">
 
-        <header class="topbar">
-            <h1>Meu Perfil</h1>
 
-            <button class="settings-btn">
-                <i class="fas fa-gear"></i>
-            </button>
-        </header>
 
-        <section class="profile-container">
+      
+      <!-- Painel grande da direita -->
+     <section class="painel-direita">
 
-            <!-- ESQUERDA -->
-            <div class="profile-info">
+  <div class="topo-localizacao">
+    <h3>Localização Atual</h3>
+    <span class="online">Online</span>
+  </div>
 
-                <div class="profile-photo">
-                    <i class="far fa-user"></i>
-                </div>
+  <img src="../assets/localizacao_perfil.png"
+       alt="Localização"
+       class="mapa-localizacao">
 
-                <div class="row">
-                    <input type="text" placeholder="Nome">
-                    <input type="text" placeholder="Ativo desde">
-                </div>
+  <div class="info-localizacao">
+    <h4>Estação Central</h4>
+    <p>São Paulo, SP - Brasil</p>
+  </div>
 
-                <input type="email" placeholder="E-mail">
-
-                <input type="tel" placeholder="Telefone">
-
-            </div>
-
-            <!-- DIREITA -->
-            <div class="map-card">
-
-                <div class="map-background">
-
-                    <div class="pin">
-                        <i class="fas fa-location-dot"></i>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
+</section>
+    </div>
+  </main>
 
 </div>
 
-<script src="../js/usuarios.js" defer></script>
+<script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+</script>
+
+
 </body>
 </html>
