@@ -255,7 +255,6 @@ main{
     margin-left: -4px; 
 }
 
-/* Links do menu */
 .sidebar nav a {
     display: flex;
     align-items: center;
@@ -266,11 +265,9 @@ main{
     text-decoration: none;
     transition: background 0.2s;
 
-  margin-top: -10px; /* sobe o bloco de navegação */
+  margin-top: -10px;
 }
 
-
-/* Botão de perfil */
 .perfil {
     display: flex;
     align-items: center;
@@ -278,7 +275,6 @@ main{
     gap: 12px;
 }
 
-/* Mantém o ícone branco caso seja PNG transparente */
 .icone-menu img {
     display: block;
 }
@@ -286,8 +282,6 @@ main{
 .menu-toggle{
     display: none
 }
-
-/* ===== CELULAR ===== */
 
 @media (max-width:768px){
 
@@ -298,9 +292,6 @@ overflow-x:hidden;
 .container{
 display:block;
 }
-
-
-/* BOTÃO MENU (igual usuários) */
 
 .menu-toggle{
 
@@ -329,9 +320,6 @@ cursor:pointer;
 z-index:1100;
 
 }
-
-
-/* NAVBAR IGUAL USUÁRIOS */
 
 .sidebar{
 
@@ -417,8 +405,6 @@ gap:10px;
 
 }
 
-
-/* DASHBOARD MOBILE */
 
 main{
 

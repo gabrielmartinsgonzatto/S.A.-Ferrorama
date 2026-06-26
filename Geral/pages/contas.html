@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - Contas | A-TRAIN</title>
+
+    <link rel="stylesheet" href="../CSS/configuracoes.css">
+    <link rel="stylesheet" href="../CSS/contas.css"> </head>
+
+<body>
+
+<header class="topo-mobile">
+    <button class="menu-toggle">☰</button>
+</header>
+
+<div class="container">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img src="../assets/Logo A-Train.png" alt="Logo" class="logo-img">
+        </div>
+
+        <nav>
+            <a href="../pages/dashboard.html">
+                <img src="../assets/home.png" class="icone-menu">
+                <span>Home</span>
+            </a>
+
+            <a href="../pages/trens.html">
+                <img src="../assets/train.png" class="icone-menu">
+                <span>Trens</span>
+            </a>
+
+            <a href="../pages/alertas.html">
+                <img src="../assets/alerta.png" class="icone-menu">
+                <span>Alertas</span>
+            </a>
+
+            <a href="../pages/usuarios.html">
+                <img src="../assets/usuario.png" class="icone-menu">
+                <span>Usuários</span>
+            </a>
+
+            <a class="active" href="../pages/configuracoes.html">
+                <img src="../assets/configuracao.png" class="icone-menu">
+                <span>Configurações</span>
+            </a>
+        </nav>
+
+        <div class="bottom">
+            <a href="../pages/usuarios.html" class="perfil">
+                <img src="../assets/usuario.png" class="icone-menu">
+                <span>Usuário</span>
+            </a>
+
+            <a href="#">
+                <img src="../assets/sair.png" class="icone-menu">
+                <span>Sair</span>
+            </a>
+        </div>
+
+    </aside>
+
+   <main class="conteudo">
+
+    <div class="topo-configuracoes">
+        <div class="titulo-pagina">
+            <h1>Configurações</h1>
+            <p>Gerencie as preferências e configurações da sua conta.</p>
+        </div>
+        <img src="../assets/configuracao.png" class="engrenagem-topo" alt="Configurações">
+    </div>
+
+    <div class="config-grid">
+
+        <aside class="menu-opcoes-config">
+            
+            <a href="#" class="item-opcao">
+                <div class="opcao-esquerda">
+                    <img src="../assets/idioma.png" alt="Idioma">
+                    <span>Idioma</span>
+                </div>
+                <img src="../assets/seta-direita.png.svg" class="seta-icone" alt="Seta">
+            </a>
+
+            <a href="#" class="item-opcao">
+                <div class="opcao-esquerda">
+                    <img src="../assets/senha.png" alt="Senhas">
+                    <span>Senhas</span>
+                </div>
+                <img src="../assets/seta-direita.png.svg" class="seta-icone" alt="Seta">
+            </a>
+
+            <a href="#" class="item-opcao ativo">
+                <div class="opcao-esquerda">
+                    <img src="../assets/perfil.png" alt="Contas">
+                    <span>Contas</span>
+                </div>
+                <span class="seta-aberta">⌄</span>
+            </a>
+
+            <a href="#" class="item-opcao">
+                <div class="opcao-esquerda">
+                    <img src="../assets/pagamento.png" alt="Pagamento">
+                    <span>Pagamento</span>
+                </div>
+                <img src="../assets/seta-direita.png.svg" class="seta-icone" alt="Seta">
+            </a>
+
+            <div class="ajuda-link">
+                <a href="#">Quer Ajuda?</a>
+            </div>
+        </aside>
+
+        <div class="painel-contas">
+
+            <div class="cabecalho-painel">
+                <div class="titulo-painel">
+                    <img src="../assets/perfil.png">
+                    <div>
+                        <h2>Contas</h2>
+                        <p>Gerencie suas contas vinculadas à plataforma.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-conta">
+                <div class="info-card">
+                    <img src="../assets/perfil.png">
+                    <div>
+                        <h3>Mudar de conta</h3>
+                        <p>Troque para outra conta cadastrada na plataforma.</p>
+                    </div>
+                </div>
+                <button class="btn-roxo">Mudar de conta</button>
+            </div>
+
+            <div class="card-conta">
+                <div class="info-card">
+                    <img src="../assets/perfil.png">
+                    <div>
+                        <h3>Migrar conta</h3>
+                        <p>Transfira seus dados e configurações para outra conta.</p>
+                    </div>
+                </div>
+                <button class="btn-roxo">Migrar conta</button>
+            </div>
+
+            <div class="card-conta">
+                <div class="info-card">
+                    <img src="../assets/perfil.png">
+                    <div>
+                        <h3>Apagar conta</h3>
+                        <p>Remova permanentemente sua conta e todos os seus dados.</p>
+                    </div>
+                </div>
+                <button class="btn-vermelho">Apagar conta</button>
+            </div>
+
+            <div class="card-conta">
+                <div class="info-card">
+                    <img src="../assets/perfil.png">
+                    <div>
+                        <h3>Desativar conta</h3>
+                        <p>Desative sua conta temporariamente.</p>
+                    </div>
+                </div>
+                <button class="btn-roxo">Desativar conta</button>
+            </div>
+
+        </div> </div> </main>
+
+</div>
+
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const sidebar = document.querySelector(".sidebar");
+
+toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>

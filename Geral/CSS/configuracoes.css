@@ -81,9 +81,6 @@ body{
     margin-top:40px;
 }
 
-/* ==========================
-        MAIN
-========================== */
 
 main{
     flex:1;
@@ -111,9 +108,6 @@ main{
     color:#6d6d8c;
 }
 
-/* ==========================
-      CONTEUDO
-========================== */
 
 .conteudo{
     display:grid;
@@ -122,9 +116,6 @@ main{
     align-items:flex-start;
 }
 
-/* ==========================
-    MENU ESQUERDO
-========================== */
 
 .menu-config{
     display:flex;
@@ -189,10 +180,6 @@ main{
     text-decoration:none;
 }
 
-/* ==========================
-      PAINEL
-========================== */
-
 .painel{
     background:#fff;
     border-radius:18px;
@@ -221,9 +208,6 @@ main{
     margin-top:5px;
 }
 
-/* ==========================
-        CARDS
-========================== */
 
 .card{
     border:1px solid #ececec;
@@ -266,9 +250,6 @@ main{
     border-color:#5b24c2;
 }
 
-/* ==========================
-        BOTÕES
-========================== */
 
 .acoes{
     display:flex;
@@ -306,10 +287,6 @@ main{
     background:#f2ebff;
 }
 
-/* ==========================
-      SCROLL
-========================== */
-
 ::-webkit-scrollbar{
     width:10px;
 }
@@ -322,10 +299,6 @@ main{
 ::-webkit-scrollbar-track{
     background:#efedf2;
 }
-
-/* ==========================
-      MOBILE
-========================== */
 
 .menu-toggle{
     display:none;
@@ -344,8 +317,6 @@ body{
 .container{
     display:block;
 }
-
-/* BOTÃO MENU */
 
 .topo-mobile{
     display:block;
@@ -378,8 +349,6 @@ body{
     z-index:1100;
 
 }
-
-/* NAVBAR */
 
 .sidebar{
 
@@ -455,7 +424,6 @@ body{
 
 }
 
-/* MAIN */
 
 main{
 
@@ -465,7 +433,6 @@ main{
 
 }
 
-/* TÍTULO */
 
 .titulo h1{
 
