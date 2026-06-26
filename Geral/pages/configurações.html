@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - A-TRAIN</title>
+
+    <link rel="stylesheet" href="../CSS/configuracoes.css">
+</head>
+
+<body>
+
+<header class="topo-mobile">
+    <button class="menu-toggle">☰</button>
+</header>
+
+<div class="container">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img src="../assets/Logo A-Train.png" alt="Logo" class="logo-img">
+        </div>
+
+        <nav>
+
+            <a href="../pages/dashboard.html">
+                <img src="../assets/home.png" class="icone-menu">
+                <span>Home</span>
+            </a>
+
+            <a href="../pages/trens.html">
+                <img src="../assets/train.png" class="icone-menu">
+                <span>Trens</span>
+            </a>
+
+            <a href="../pages/relatorios.html">
+                <img src="../assets/alerta.png" class="icone-menu">
+                <span>Alertas</span>
+            </a>
+
+            <a href="../pages/usuarios.html">
+                <img src="../assets/usuario.png" class="icone-menu">
+                <span>Usuários</span>
+            </a>
+
+            <a class="active" href="../pages/configuracoes.html">
+                <img src="../assets/configuracao.png" class="icone-menu">
+                <span>Configurações</span>
+            </a>
+
+        </nav>
+
+        <div class="bottom">
+
+            <a href="../pages/usuarios.html" class="perfil">
+                <img src="../assets/usuario.png" class="icone-menu">
+                <span>Usuário</span>
+            </a>
+
+            <a href="../pages/login.html">
+                <img src="../assets/sair.png" class="icone-menu">
+                <span>Sair</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= CONTEÚDO ================= -->
+
+    <main>
+
+        <div class="titulo">
+
+            <img src="../assets/configuracao.png" class="icone-titulo">
+
+            <h1>Configurações</h1>
+
+            <p>
+                Gerencie as preferências e configurações da sua conta.
+            </p>
+
+        </div>
+
+        <section class="conteudo">
+
+            <!-- MENU LATERAL -->
+
+            <div class="menu-config">
+
+                <div class="item ativo">
+
+                    <div class="lado-esquerdo">
+
+                        <img src="../assets/idioma.png">
+
+                        <div>
+
+                            <h3>Idioma</h3>
+
+                            <small>
+                                Escolha o idioma da plataforma.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <img src="../assets/seta-direita.png.svg" class="seta">
+
+                </div>
+
+                <div class="item">
+
+                    <div class="lado-esquerdo">
+
+                        <img src="../assets/senha.png">
+
+                        <h3>Senhas</h3>
+
+                    </div>
+
+                    <img src="../assets/seta-direita.png.svg" class="seta">
+
+                </div>
+
+                <div class="item">
+
+                    <div class="lado-esquerdo">
+
+                        <img src="../assets/perfil.png">
+
+                        <h3>Contas</h3>
+
+                    </div>
+
+                    <img src="../assets/seta-direita.png.svg" class="seta">
+
+                </div>
+
+                <div class="item">
+
+                    <div class="lado-esquerdo">
+
+                        <img src="../assets/pagamento.png">
+
+                        <h3>Pagamento</h3>
+
+                    </div>
+
+                    <img src="../assets/seta-direita.png.svg" class="seta">
+
+                </div>
+
+                <a class="ajuda" href="#">
+                    Quer Ajuda?
+                </a>
+
+            </div>
+
+            <!-- PAINEL -->
+
+            <div class="painel">
+
+                <div class="cabecalho-painel">
+
+                    <img src="../assets/senha.png">
+
+                    <div>
+
+                        <h2>Senhas</h2>
+
+                        <p>
+                            Gerencie e proteja sua conta alterando ou recuperando sua senha.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- ALTERAR SENHA -->
+
+                <div class="card">
+
+                    <h3>Alterar sua senha</h3>
+
+                    <p>
+                        Altere sua senha regularmente para manter sua conta segura.
+                    </p>
+
+                    <label>Senha atual</label>
+
+                    <input type="password"
+                        placeholder="Digite sua senha atual">
+
+                    <label>Nova senha</label>
+
+                    <input type="password"
+                        placeholder="Digite sua nova senha">
+
+                    <label>Confirmar nova senha</label>
+
+                    <input type="password"
+                        placeholder="Confirme sua nova senha">
+
+                    <div class="acoes">
+
+                        <button class="btn-roxo">
+                            Alterar senha
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- RECUPERAR -->
+
+                <div class="card">
+
+                    <h3>Recuperar senha</h3>
+
+                    <p>
+
+                        Esqueceu sua senha?
+
+                        Você pode redefini-la enviando um link
+                        de recuperação para seu e-mail.
+
+                    </p>
+
+                    <label>E-mail da conta</label>
+
+                    <input
+                        type="email"
+                        placeholder="Digite seu e-mail">
+
+                    <div class="acoes">
+
+                        <button class="btn-outline">
+
+                            Enviar link de recuperação
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+
+const toggle = document.querySelector(".menu-toggle");
+const sidebar = document.querySelector(".sidebar");
+
+toggle.addEventListener("click",()=>{
+
+sidebar.classList.toggle("active");
+
+});
+
+</script>
+
+</body>
+</html>

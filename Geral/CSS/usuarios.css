@@ -149,7 +149,6 @@ body{
 
 
 
-/* Lista de informações pessoais */
 .painel-esquerda ul {
   list-style: none;
   margin-top: 15px;
@@ -174,7 +173,7 @@ body{
   background: #c40000;
 }
 
-/* Painel da direita */
+
 .topo-localizacao {
   display: flex;
   justify-content: space-between;
@@ -198,7 +197,7 @@ body{
   margin-bottom: 5px;
 }
 
-/* sidebar */
+
 .sidebar{
     width:220px;
 
@@ -315,7 +314,7 @@ main{
     margin-left: -4px; 
 }
 
-/* Links do menu */
+
 .sidebar nav a {
     display: flex;
     align-items: center;
@@ -326,11 +325,10 @@ main{
     text-decoration: none;
     transition: background 0.2s;
 
-  margin-top: -10px; /* sobe o bloco de navegação */
+  margin-top: -10px; 
 }
 
  
-/* botaoperfil */ 
 .perfil {
     display: flex;
     align-items: center;
@@ -344,7 +342,6 @@ main{
 
 
 
-/* ===== MOBILE ===== */
 
 @media (max-width:768px){
 
@@ -416,7 +413,6 @@ border-radius:8px;
 
 }
 
-/* CONTEÚDO */
 
 main{
 
@@ -430,7 +426,7 @@ overflow-x:hidden;
 
 }
 
-/* EMPILHA TUDO */
+
 
 .grid{
 
@@ -473,7 +469,6 @@ transform:translateX(0);
 }
 
 
-/* AJUSTE DE ESPAÇAMENTO */
 
 .logo{
 
